@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div className="p-4">
-      <h1 className="text-xl font-semibold">Logs</h1>
+      <h1 className="text-lg">Logs</h1>
       <div className="mt-4">
         <table className="rounded-md border-separate  table-auto">
           <thead>
