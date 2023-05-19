@@ -24,16 +24,30 @@ const columns = [
     cell: (ctx) => ctx.getValue(),
     header: "RFID",
   }),
+  columnHelper.accessor("uname", {
+    cell: (ctx) => ctx.getValue(),
+    header: "Name",
+  }),
+  columnHelper.accessor("vmodel", {
+    cell: (ctx) => ctx.getValue(),
+    header: "Vehicle Model",
+  }),
   columnHelper.accessor("action", {
     cell: (ctx) => ctx.getValue(),
-    header: "ACTION",
+    header: "Action",
   }),
+  columnHelper.accessor("time", {
+    cell: (ctx) => ctx.getValue(),
+    header: "Timestamp",
+  }),
+  
 ];
 
 export default function Home() {
   const { data, isLoading } = useQuery({
     queryKey: ["logs"],
     queryFn: getAllLogs,
+    refetchInterval:1000
   });
 
   const table = useReactTable({
@@ -49,8 +63,6 @@ export default function Home() {
       </div>
     );
   }
-
-  console.log(data);
 
   return (
     <div className="p-4">
